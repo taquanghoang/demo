@@ -1,0 +1,38 @@
+$ mkdir tutorial
+$ cd tutorial
+$ git init
+
+$ git status
+
+$ git commit -m "<commit>"
+$ git add <file>..
+$ git add . (Đăng ký index tất cả các file)
+$ git log
+$ gitg
+
+echo "# tutorial" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/taquanghoang/tutorial.git
+git push -u origin master
+
+git clone
+git pull
+
+git branch
+git branch ...
+git branh -d
+git checkout ...
+git merge
+
+$ git reset --hard HEAD~
+
+rebase
+$ git add myfile.txt
+$ git rebase --continue
+
+Tag
+$ git tag <tagname>
+$ git tag
+$ git log --decorate

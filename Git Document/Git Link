@@ -1,0 +1,61 @@
+[Git]
+http://git-scm.com/book - 4 chương đầu 
+http://backlogtool.com/git-guide/vn/intro/intro1_1.html
+http://chris.beams.io/posts/git-commit/
+https://docs.google.com/presentation/d/17ujkZPZbHlku1O5p7vJcUpTKM_ppxFvK9bSF2DRF8_c/edit?usp=sharing  Preview Preview
+
+[Video]
+https://www.youtube.com/watch?v=OBCnmcgx4CE  Preview
+English Version: https://www.youtube.com/watch?v=mRhn06LV6_Q
+
+[Link làm bài test test]
+http://training.framgia.vn/users/sign_in
+
+Trên Git, có thể lưu trạng thái của file khi có nhu cầu dưới dạng lịch sử cập nhật. Vì thế, có thể đưa file đã chỉnh sửa một lần về trạng thái cũ hay có thể hiển thị sự khác biệt ở nơi chỉnh sửa. 
+
+Repository là nơi sẽ ghi lại trạng thái của thư mục và file
+
+Đầu tiên, repository của Git được phân thành 2 loại là remote repository và local repository.
+    Remote repository: Là repository để chia sẻ giữa nhiều người và bố trí trên server chuyên dụng.
+    Local repository: Là repository bố trí trên máy của bản thân mình, dành cho một người dùng sử dụng.
+
+Tạo repository
+Có 2 cách tạo local repository mà mình có sẵn.
+Cách thứ nhất là tạo repository hoàn toàn mới, cách thứ hai là sao chép remote repository rồi tạo.
+Commit sẽ ghi lại thay đổi
+Để ghi lại việc thêm/ thay đổi file hay thư mục vào repository thì sẽ thực hiện thao tác gọi là Commit.
+Khi thực hiện commit, trong repository sẽ tạo ra commit (hoặc revision) đã ghi lại sự khác biệt từ trạng thái đã commit lần trước đến trạng thái hiện tại.
+Các commit này, được đặt tên bởi 40 ký tự alphabet không trùng nhau đã được tính toán từ thông tin commit. Bằng việc chỉ định tên này, có thể chỉ định commit từ trong repository.
+Khi thực hiện commit có yêu cầu nhập giải thích commit (commit message). Vì commit message là bắt buộc nên nếu để trống mà thực hiện thì commit sẽ thất bại.
+
+Working Tree và Index
+Trên Git, những thư mục được đặt trong sự quản lý của Git mà mọi người đang thực hiện công việc trong thực tế được gọi là working tree.
+Và trên Git, giữa repository và working tree tồn tại một nơi gọi là index. Index là nơi để chuẩn bị cho việc commit lên repository.
+
+Push lên remote repository
+Clone
+Để sao chép remote repository, sẽ thực hiện thao tác gọi là "clone".
+Pull
+Để cập nhật local repository từ remote repository thì thực hiện thao tác gọi là Pull.
+
+Chuyển đổi branches
+Để chuyển đổi branch làm việc thì sẽ thực hiện thao tác gọi là checkout
+Việc tích hợp branch thì có hai phương pháp, phương pháp sử dụng merge và phương pháp sử dụng rebase.
+Khi merge branch bugfix này vào branch master, nếu trạng thái branch master không có gì thay đổi thì có thể thực hiện merge hết sức đơn giản. Vì lịch sử của branch bugfix sẽ bao gồm tất cả lịch sử của branch master, nên branch master chỉ có việc di chuyển đơn giản là có thể lấy được nội dung của branch bugfix. Và, người ta gọi merge như thế này là merge fast-forward (chuyển tiếp nhanh).
+
+Cả merge và rebase đều là tích hợp lịch sử lại với nhau nhưng đặc trưng thì khác nhau.
+    Merge
+    Lịch sử nội dung thay đổi vẫn còn lại nhưng sẽ trở nên phức tạp hơn.
+    Rebase
+    Lịch sử sẽ trở nên đơn giản nhưng nội dung thay đổi từ commit ban đầu sẽ bị thay đổi. Cho nên cũng có trường hợp rơi vào tình trạng commit gốc không hoạt động.
+Merge và Rebase thì tùy theo phương châm áp dụng của nhóm mà chia ra sử dụng.
+Ví dụ, nếu áp dụng để hợp nhất hóa lịch sử, thì sẽ phân ra sử dụng như sau:
+    Trường hợp đưa code mới nhất của branch tích hợp vào branch chủ đề thì sử dụng rebase.
+    Trường hợp đưa branch chủ đề vào branch tích hợp, thì trước hết hãy rebase rồi merge.
+
+Fetching
+Khi thực hiện pull, merge nội dung của remote repository sẽ tự động được tiến hành. Tuy nhiên, cũng có trường hợp chỉ đơn giản muốn kiểm tra nội dung của remote repository mà không muốn merge. Những lúc như vậy hãy sử dụng fetch.
+
+Trên Git có thể sử dụng 2 loại tag là lightweigh tag và annotated tag. Thêm nữa, tag đã đính kèm một lần là cố định, vị trí không di chuyển được như branch.
+Mặt khác lightweigh tag thì chủ yếu được dùng trên không gian local làm việc tạm thời.
+
